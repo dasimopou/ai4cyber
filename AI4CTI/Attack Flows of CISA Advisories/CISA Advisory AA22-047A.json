@@ -1,0 +1,284 @@
+{
+  "type": "bundle",
+  "id": "bundle--e77220e1-9220-40e5-8cc6-81127b997c3a",
+  "spec_version": "2.1",
+  "created": "2024-10-30T14:51:03.414Z",
+  "modified": "2024-10-30T14:51:03.414Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--af3387ac-92f9-4f39-af16-1b6c3f1f1b2b",
+      "spec_version": "2.1",
+      "created": "2024-10-30T13:10:08.862Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--ecca5426-6976-4387-942c-bc845f35c2a4",
+      "start_refs": [
+        "attack-action--ba73ca0f-fc82-4176-81a0-b4d2a44bdb08"
+      ],
+      "name": "Advisory 10 (AA22-047A)",
+      "description": "Attack goal: Exfiltration - UC 2: SC2.2",
+      "scope": "incident",
+      "external_references": [
+        {
+          "source_name": "AttackIQ",
+          "description": "Attack Graph Response to US-CERT AA22-011A & AA22-047A: Preparing for Russian State-Sponsored Cyberthreats",
+          "url": "https://www.attackiq.com/2022/02/24/preparing-for-russian-state-sponsored-cyberthreats-to-u-s-and-allied-critical-infrastructure/"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--ecca5426-6976-4387-942c-bc845f35c2a4",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "name": "Oscar",
+      "contact_information": "oscar.llorente@tecnalia.com"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ba73ca0f-fc82-4176-81a0-b4d2a44bdb08",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "System Information Discovery",
+      "tactic_id": "TA0007",
+      "tactic_ref": "x-mitre-tactic--c17c5845-175e-4421-9713-829d0573dbc9",
+      "technique_id": "T1082",
+      "technique_ref": "attack-pattern--354a7f88-63fb-41b5-a801-ce3b377b36f1",
+      "description": "One of the first steps an actor will take once initial access has been achieved is to gain intelligence about the compromised asset. The attack graph emulates this behavior by executing native operating system commands like ‘systeminfo’ and ‘tasklist’.",
+      "effect_refs": [
+        "attack-action--e2435e0b-0055-406e-b9b5-baf5e7ab626c"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--e2435e0b-0055-406e-b9b5-baf5e7ab626c",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Process Discovery",
+      "tactic_id": "TA0007",
+      "tactic_ref": "x-mitre-tactic--c17c5845-175e-4421-9713-829d0573dbc9",
+      "technique_id": "T1057",
+      "technique_ref": "attack-pattern--8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
+      "description": "One of the first steps an actor will take once initial access has been achieved is to gain intelligence about the compromised asset. The attack graph emulates this behavior by executing native operating system commands like ‘systeminfo’ and ‘tasklist’.",
+      "effect_refs": [
+        "attack-action--0ba39efe-6f1e-490a-a3ec-19bc2c30fb1d"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--0ba39efe-6f1e-490a-a3ec-19bc2c30fb1d",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "OS Credential Dumping",
+      "tactic_id": "TA0006",
+      "tactic_ref": "x-mitre-tactic--2558fd61-8c75-4730-94c4-11926db2a263",
+      "technique_id": "T1003",
+      "technique_ref": "attack-pattern--0a3ead4e-6d47-4ccb-854c-a6a4f9d96b22",
+      "description": "The attack graph continues by using a PowerShell version of Mimikatz to dump all available credentials that could be used by the actor to move from their initial foothold to the rest of the target environment.",
+      "effect_refs": [
+        "attack-action--7efee318-e118-427c-82bc-8f6e6333fe5e",
+        "attack-action--7703e76d-cc08-4fba-aed8-878a0d4d5f76"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7efee318-e118-427c-82bc-8f6e6333fe5e",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Windows Management Instrumentation",
+      "tactic_id": "TA0002",
+      "tactic_ref": "x-mitre-tactic--4ca45d45-df4d-4613-8980-bac22d278fa5",
+      "technique_id": "T1047",
+      "technique_ref": "attack-pattern--01a5a209-b94c-450b-b7f9-946497d91055",
+      "description": "Using Windows Management Instrumentation (WMI) the attack graph attempts to move onto other hosts it can find in the local network.",
+      "effect_refs": [
+        "attack-operator--658ca504-35df-4310-bf4d-3bd42178dc09"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--7703e76d-cc08-4fba-aed8-878a0d4d5f76",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Brute Force",
+      "tactic_id": "TA0006",
+      "tactic_ref": "x-mitre-tactic--2558fd61-8c75-4730-94c4-11926db2a263",
+      "technique_id": "T1110",
+      "technique_ref": "attack-pattern--a93494bb-4b80-4ea1-8695-3236a49916fd",
+      "description": "If the credentials don’t allow for remote access using WMI, the attack graph pivots and attempts to brute-force login to a targeted system.",
+      "effect_refs": [
+        "attack-operator--658ca504-35df-4310-bf4d-3bd42178dc09"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--658ca504-35df-4310-bf4d-3bd42178dc09",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "OR",
+      "effect_refs": [
+        "attack-action--ae42d5b7-0c82-46e0-a0db-d576de35afdc"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ae42d5b7-0c82-46e0-a0db-d576de35afdc",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Domain Trust Discovery",
+      "tactic_id": "TA0007",
+      "tactic_ref": "x-mitre-tactic--c17c5845-175e-4421-9713-829d0573dbc9",
+      "technique_id": "T1482",
+      "technique_ref": "attack-pattern--767dbf9e-df3f-45cb-8998-4903ab5f80c0",
+      "description": "To expand the actor’s knowledge of the target’s Active Directory configuration, the graph uses PowerShell to gather information on domain trust relationships that would allow an actor to access additional resources with credentials from their current domain. Additionally, BloodHound is executed to reveal hidden relationships within the targeted Active Directory environment.",
+      "effect_refs": [
+        "attack-action--255bb67c-3e5f-4e1b-aa82-1a44aa6ae047"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--255bb67c-3e5f-4e1b-aa82-1a44aa6ae047",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exploitation of Remote Services",
+      "tactic_id": "TA0008",
+      "tactic_ref": "x-mitre-tactic--7141578b-e50b-4dcc-bfa4-08a8dd689e9e",
+      "technique_id": "T1210",
+      "technique_ref": "attack-pattern--9db0cf3a-a3c9-4012-8268-123b9db6fd82",
+      "description": "Gaining access to the domain controller is one of the primary goals of Russian threat groups. The attack graph attempts to exploit the Zerologon vulnerability to gain domain administrator privileges.",
+      "effect_refs": [
+        "attack-action--4d758193-8e4a-44de-a417-154ffcece5fa"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--4d758193-8e4a-44de-a417-154ffcece5fa",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Steal or Forge Kerberos Tickets: Kerberoasting",
+      "tactic_id": "TA0006",
+      "tactic_ref": "x-mitre-tactic--2558fd61-8c75-4730-94c4-11926db2a263",
+      "technique_id": "T1558.003",
+      "technique_ref": "attack-pattern--f2877f7f-9a4c-4251-879f-1224e3006bee",
+      "description": "The threat actors utilize Kerberoasting attacks to increase their permissions by discovering Service Principal Names (SPNs) assigned to user accounts and requesting their Ticket Granting Service (TGS) tickets that allow for login access to privileged assets. For accurate results this scenario requires either existing credentials pre-configured in the assessment or an asset that already has cached Kerberos credentials, like a system that has recently authenticated a user against a domain controller.",
+      "effect_refs": [
+        "attack-action--d67bf336-e0b3-4626-bd6f-13a9d2b05acc"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--d67bf336-e0b3-4626-bd6f-13a9d2b05acc",
+      "spec_version": "2.1",
+      "created": "2024-10-30T14:51:03.415Z",
+      "modified": "2024-10-30T14:51:03.415Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "OS Credential Dumping: NTDS",
+      "tactic_id": "TA0006",
+      "tactic_ref": "x-mitre-tactic--2558fd61-8c75-4730-94c4-11926db2a263",
+      "technique_id": "T1003.003",
+      "technique_ref": "attack-pattern--edf91964-b26e-4b4a-9600-ccacd7d7df24",
+      "description": "One of the many end goals of the threat actor is to obtain a copy of the Active Directory database so that it may be attacked offline. Russian actors have been observed dumping the NTDS.dit database from a domain controller once administrative access has been achieved. This scenario needs to be executed on a Domain Controller asset."
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "type": "bundle",
+  "id": "bundle--19e3455a-ce6b-4f55-8710-4ba48270bd33",
+  "spec_version": "2.1",
+  "created": "2024-10-29T15:49:04.085Z",
+  "modified": "2024-10-29T15:49:04.085Z",
+  "objects": [
+    {
+      "type": "extension-definition",
+      "id": "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "name": "Attack Flow",
+      "description": "Extends STIX 2.1 with features to create Attack Flows.",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "schema": "https://center-for-threat-informed-defense.github.io/attack-flow/stix/attack-flow-schema-2.0.0.json",
+      "version": "2.0.0",
+      "extension_types": [
+        "new-sdo"
+      ],
+      "external_references": [
+        {
+          "source_name": "Documentation",
+          "description": "Documentation for Attack Flow",
+          "url": "https://center-for-threat-informed-defense.github.io/attack-flow"
+        },
+        {
+          "source_name": "GitHub",
+          "description": "Source code repository for Attack Flow",
+          "url": "https://github.com/center-for-threat-informed-defense/attack-flow"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "spec_version": "2.1",
+      "created": "2022-08-02T19:34:35.143Z",
+      "modified": "2022-08-02T19:34:35.143Z",
+      "created_by_ref": "identity--fb9c968a-745b-4ade-9b25-c324172197f4",
+      "name": "MITRE Engenuity Center for Threat-Informed Defense",
+      "identity_class": "organization"
+    },
+    {
+      "type": "attack-flow",
+      "id": "attack-flow--5bcf2957-f9c6-499f-bfca-f4264747ab78",
+      "spec_version": "2.1",
+      "created": "2024-10-29T11:06:46.742Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "created_by_ref": "identity--ed0aa155-03a3-471c-8718-0bbc2f2bd7ed",
+      "start_refs": [
+        "attack-action--ff6084f7-03e1-4684-bdf1-0fc40bb64f72"
+      ],
+      "name": "Advisory 5 (AA22-321A)",
+      "description": "Attack goal: Ransom - UC 3: SC3.1",
+      "scope": "incident",
+      "external_references": [
+        {
+          "source_name": "AttackIQ",
+          "description": "Attack Graph Response to US-CERT Alert (AA22-321A): #StopRansomware: Hive Ransomware",
+          "url": "https://www.attackiq.com/2022/11/18/attack-graph-response-to-us-cert-alert-aa22-321a/"
+        }
+      ]
+    },
+    {
+      "type": "identity",
+      "id": "identity--ed0aa155-03a3-471c-8718-0bbc2f2bd7ed",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "name": "Oscar",
+      "contact_information": "oscar.llorente@tecnalia.com"
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--ff6084f7-03e1-4684-bdf1-0fc40bb64f72",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Process Discovery",
+      "tactic_id": "TA0007",
+      "tactic_ref": "x-mitre-tactic--c17c5845-175e-4421-9713-829d0573dbc9",
+      "technique_id": "T1057",
+      "technique_ref": "attack-pattern--8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
+      "description": "Window’s built-in tasklist command is executed and the results are saved to a file in a temporary location.",
+      "effect_refs": [
+        "attack-action--4456f097-e7db-419d-b9d0-13b4f9d091c2"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--4456f097-e7db-419d-b9d0-13b4f9d091c2",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Security Software Discovery",
+      "tactic_id": "TA0007",
+      "tactic_ref": "x-mitre-tactic--c17c5845-175e-4421-9713-829d0573dbc9",
+      "technique_id": "T1518.001",
+      "technique_ref": "attack-pattern--cba37adb-d6fb-4610-b069-dd04c0643384",
+      "description": "A PowerShell script is executed to determine which software has been installed as an AntiVirusProduct class.",
+      "effect_refs": [
+        "attack-action--0e23704c-b520-48dd-8ffe-0a7683a1a4bc"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--0e23704c-b520-48dd-8ffe-0a7683a1a4bc",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Impair Defenses: Disable or Modify Tools",
+      "tactic_id": "TA0005",
+      "tactic_ref": "x-mitre-tactic--78b23412-0651-46d7-a540-170a1ce8bd5a",
+      "technique_id": "T1562.001",
+      "technique_ref": "attack-pattern--ac08589e-ee59-4935-8667-d845e38fe579",
+      "description": "Uses PowerShell to set the DisableAntiSpyware registry key that will prevent Microsoft Defender from running after next reboot.",
+      "effect_refs": [
+        "attack-action--f14fbd57-4585-43e3-9523-598ef86704a6"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--f14fbd57-4585-43e3-9523-598ef86704a6",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Scheduled Task",
+      "tactic_id": "TA0003",
+      "tactic_ref": "x-mitre-tactic--5bc1d813-693e-4823-9961-abf9af4b0e92",
+      "technique_id": "T1053.005",
+      "technique_ref": "attack-pattern--005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+      "description": "The Windows Task Scheduler is used to create a task that will execute a command at startup.",
+      "effect_refs": [
+        "attack-action--8309556e-33bc-4bce-8223-4b12bce5f067"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--8309556e-33bc-4bce-8223-4b12bce5f067",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Create Account: Local Account",
+      "tactic_id": "TA0003",
+      "tactic_ref": "x-mitre-tactic--5bc1d813-693e-4823-9961-abf9af4b0e92",
+      "technique_id": "T1136.001",
+      "technique_ref": "attack-pattern--635cbe30-392d-4e27-978e-66774357c762",
+      "description": "Actors create a new account using net user.",
+      "effect_refs": [
+        "attack-action--82062385-86b6-46c5-b3e4-d038bb8e0499"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--82062385-86b6-46c5-b3e4-d038bb8e0499",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "File and Directory Discovery",
+      "tactic_id": "TA0007",
+      "tactic_ref": "x-mitre-tactic--c17c5845-175e-4421-9713-829d0573dbc9",
+      "technique_id": "T1083",
+      "technique_ref": "attack-pattern--7bc57495-ea59-4380-be31-a64af124ef18",
+      "description": "This scenario uses the native dir command to find files of interest and output to a temporary file.",
+      "effect_refs": [
+        "attack-action--fc966262-3190-4a0e-9628-c2e3e00d828a"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--fc966262-3190-4a0e-9628-c2e3e00d828a",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Exfiltration Over Unencrypted Non-C2 Protocol",
+      "tactic_id": "TA0010",
+      "tactic_ref": "x-mitre-tactic--9a4e74ab-5008-408c-84bf-a10dfbc53462",
+      "technique_id": "T1048.003",
+      "technique_ref": "attack-pattern--fb8d023d-45be-47e9-bc51-f56bcae6435b",
+      "description": "This scenario generates fake sensitive data which is exfiltrated over unencrypted HTTP POST requests to an AttackIQ controlled server.",
+      "effect_refs": [
+        "attack-action--2d12a135-481c-4627-8bc2-9da5ef90d9b0"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--2d12a135-481c-4627-8bc2-9da5ef90d9b0",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Network Service Discovery",
+      "tactic_id": "TA0007",
+      "tactic_ref": "x-mitre-tactic--c17c5845-175e-4421-9713-829d0573dbc9",
+      "technique_id": "T1046",
+      "technique_ref": "attack-pattern--e3a12395-188d-4051-9a16-ea8e14d07b88",
+      "description": "This scenario uses nmap for scanning hosts that are open on ports 139,389,445,636,3389 that would identify remotely accessible hosts to the attacker.",
+      "effect_refs": [
+        "attack-action--8ebecd6a-f214-43c8-92ee-607ccca81a4d",
+        "attack-action--c34f0429-a011-4613-9746-ad92c64b7141",
+        "attack-action--8b812720-1ae3-4b94-8e51-fbfbb427f1b6"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--8ebecd6a-f214-43c8-92ee-607ccca81a4d",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Remote Services: Remote Desktop Protocol",
+      "tactic_id": "TA0008",
+      "tactic_ref": "x-mitre-tactic--7141578b-e50b-4dcc-bfa4-08a8dd689e9e",
+      "technique_id": "T1021.001",
+      "technique_ref": "attack-pattern--eb062747-2193-45de-8fa2-e62549c37ddf",
+      "description": "Remote Desktop is the built-in remote access utility used by Windows. This scenario attempts to remotely connect to another accessible asset with stolen credentials.",
+      "effect_refs": [
+        "attack-operator--de525dde-2df2-46d4-861e-c18f737bb5d1"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--c34f0429-a011-4613-9746-ad92c64b7141",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Windows Management Instrumentation",
+      "tactic_id": "TA0002",
+      "tactic_ref": "x-mitre-tactic--4ca45d45-df4d-4613-8980-bac22d278fa5",
+      "technique_id": "T1047",
+      "technique_ref": "attack-pattern--01a5a209-b94c-450b-b7f9-946497d91055",
+      "description": "This scenario uses wmic commands to execute commands on a remote target.",
+      "effect_refs": [
+        "attack-operator--de525dde-2df2-46d4-861e-c18f737bb5d1"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--8b812720-1ae3-4b94-8e51-fbfbb427f1b6",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Pass the Hash",
+      "tactic_id": "TA0008",
+      "tactic_ref": "x-mitre-tactic--7141578b-e50b-4dcc-bfa4-08a8dd689e9e",
+      "technique_id": "T1550.002",
+      "technique_ref": "attack-pattern--e624264c-033a-424d-9fd7-fc9c3bbdb03e",
+      "description": "Using Mimikatz the actors can dump hashes from LSASS memory, and they can be used to authentication via NTLM to other enterprise resources.",
+      "effect_refs": [
+        "attack-operator--de525dde-2df2-46d4-861e-c18f737bb5d1"
+      ]
+    },
+    {
+      "type": "attack-operator",
+      "id": "attack-operator--de525dde-2df2-46d4-861e-c18f737bb5d1",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.086Z",
+      "modified": "2024-10-29T15:49:04.086Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "operator": "OR",
+      "effect_refs": [
+        "attack-action--2e76095c-56b4-4bfb-8ca7-6d25bd250472"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--2e76095c-56b4-4bfb-8ca7-6d25bd250472",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.087Z",
+      "modified": "2024-10-29T15:49:04.087Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Ingress Tool Transfer",
+      "tactic_id": "TA0011",
+      "tactic_ref": "x-mitre-tactic--f72804c5-f15a-449e-a5da-2eecd181f813",
+      "technique_id": "T1105",
+      "technique_ref": "attack-pattern--e6919abc-99f9-4c6c-95a5-14761e7b2add",
+      "description": "This scenario downloads to memory and saves to disk in independent scenarios to test network and endpoint controls and their ability to prevent the delivery of known malicious Hive ransomware samples.",
+      "effect_refs": [
+        "attack-action--3dae4ca5-d0ca-4cbd-b2b6-7d38ca6cedd5"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--3dae4ca5-d0ca-4cbd-b2b6-7d38ca6cedd5",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.087Z",
+      "modified": "2024-10-29T15:49:04.087Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "BITS Jobs",
+      "tactic_id": "TA0005",
+      "tactic_ref": "x-mitre-tactic--78b23412-0651-46d7-a540-170a1ce8bd5a",
+      "technique_id": "T1197",
+      "technique_ref": "attack-pattern--c8e87b83-edbb-48d4-9295-4974897525b7",
+      "description": "Background Intelligent Transfer Service (BITS) is a native mechanism used by legitimate applications to use a system’s idle bandwidth to retrieve files without disrupting other applications. Commands are executed using bitsadmin to create a BITS job and configure it to download a remote payload.",
+      "effect_refs": [
+        "attack-action--00af7f41-c6aa-46ac-8b6d-627312d04b0c"
+      ]
+    },
+    {
+      "type": "attack-action",
+      "id": "attack-action--00af7f41-c6aa-46ac-8b6d-627312d04b0c",
+      "spec_version": "2.1",
+      "created": "2024-10-29T15:49:04.087Z",
+      "modified": "2024-10-29T15:49:04.087Z",
+      "extensions": {
+        "extension-definition--fb9c968a-745b-4ade-9b25-c324172197f4": {
+          "extension_type": "new-sdo"
+        }
+      },
+      "name": "Data Encrypted for Impact",
+      "tactic_id": "TA0040",
+      "tactic_ref": "x-mitre-tactic--5569339b-94c2-49ee-afb3-2222936582c8",
+      "technique_id": "T1486",
+      "technique_ref": "attack-pattern--b80d107d-fa0d-4b60-9684-b0433e8bdba0",
+      "description": "This scenario performs the file encryption routines used by common ransomware families. Files matching an extension list are identified and encrypted in place using the same encryption algorithms observed in another Rust-based ransomware family."
+    }
+  ]
+}
