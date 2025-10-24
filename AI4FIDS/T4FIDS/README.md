@@ -5,5 +5,5 @@ T4FIDS implement the federated training of intrusion detection model, across mul
 ##  Accessing T4FIDS 
 
 You can access the T4FIDS  through the following link:  
-👉 [T4FIDS on GitHub](https://github.com/Metamind-Innovations/t4fids)  
+👉 [T4FIDS on GitHub]([https://github.com/Metamind-Innovations/t4fids](https://github.com/Metamind-Innovations/t4fids_ai4fids))  
 
